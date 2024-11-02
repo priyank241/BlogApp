@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% block title %}Create New Post{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Create a New Post</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label" for="id_title">Title</label>
+                <div class="control">
+                    {{ form.title }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="id_slug">Slug</label>
+                <div class="control">
+                    {{ form.slug }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="id_intro">Introduction</label>
+                <div class="control">
+                    {{ form.intro }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="id_body">Body</label>
+                <div class="control">
+                    {{ form.body }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="id_author_name">Author Name</label>
+                <div class="control">
+                    {{ form.author_name }}
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="id_author_email">Author Email</label>
+                <div class="control">
+                    {{ form.author_email }}
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
